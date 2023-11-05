@@ -7,29 +7,29 @@ const AddBook = () => {
 const handleAddProduct = e =>{
     e.preventDefault()
     const form = e.target
-    const name = form.name.value;
+    const bookName = form.bookName.value;
     const photo = form.photo.value;
-    const brand = form.brand.value;
-    const type = form.type.value;
-    const price = form.price.value;
+    const category = form.category.value;
+    const quantity = form.quantity.value;
+    const author = form.author.value;
     const rating = form.rating.value;
     const description = form.description.value;
 
-    const product = {name, photo, brand,type,price,rating,description}
-    console.log(product);
+    const allBook = {bookName, photo, category,quantity,author,rating,description}
+    console.log(allBook);
 
-    // fetch('https://technology-electronics-server-2znvhdtbk-my-team-88e02784.vercel.app/products',{
-    //     method:'POST',
-    //     headers:{
-    //         "Content-Type": "application/json",
-    //     },
-    //     body:JSON.stringify(product)
-    // })
-    // .then(res => res.json())
-    // .then(data => {
-    //     console.log(data);
-    //     swal("Product add successfully");
-    // })
+    fetch('http://localhost:5000/books',{
+        method:'POST',
+        headers:{
+            "Content-Type": "application/json",
+        },
+        body:JSON.stringify(allBook)
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+        swal("Product add successfully");
+    })
 }
 
 
@@ -48,11 +48,11 @@ const handleAddProduct = e =>{
         </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Name</span>
+                <span className="label-text"> Book Name</span>
               </label>
               <input
                 type="text"
-                name="name" 
+                name="bookName" 
                 placeholder="Name"
                 className="input input-bordered"
                 required
@@ -65,10 +65,10 @@ const handleAddProduct = e =>{
   </label>
   <select name="category" className="input input-bordered" required>
     <option value="">Select a category</option>
-    <option value="category1">History</option>
-    <option value="category2">Cooking</option>
-    <option value="category3">Sports</option>
-    <option value="category3">Travel</option>
+    <option value="History">History</option>
+    <option value="Cooking">Cooking</option>
+    <option value="Sports">Sports</option>
+    <option value="Travel">Travel</option>
     
   </select>
 </div>
@@ -125,7 +125,7 @@ const handleAddProduct = e =>{
                 </div>
                 </div>
   
-                <button className=" my-12 btn text-white bg-orange-500  flex justify-center w-96 mx-auto"> Add Product </button>
+                <button className=" my-12 btn text-white bg-orange-500  flex justify-center w-96 mx-auto"> Add Books </button>
           </form>
           </div>
         

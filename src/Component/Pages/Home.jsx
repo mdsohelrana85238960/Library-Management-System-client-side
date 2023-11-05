@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Header from "./Header";
 
 const Home = () => {
@@ -17,7 +17,8 @@ const Home = () => {
       </div>
     <div className="grid grid-cols-1 gap-16 md:grid-cols-2 ">
     {
-        categorys.map(category => <div key={category.id}>  <div  className="card card-compact mx-auto   w-96 bg-base-100 shadow-xl">
+        categorys.map(category => <div key={category.id}> <Link to={`/books/${category.category_name}`}> 
+        <div  className="card card-compact mx-auto   w-96 bg-base-100 shadow-xl">
         <figure><img className="h-80 " src= {category.img} alt="Shoes" /></figure>
         
           <div className="flex justify-between  p-4"> <h2 className="card-title text-2xl p-1 text-orange-200">{category.category_name}</h2>
@@ -25,7 +26,10 @@ const Home = () => {
           <button className="btn btn-primary">Relevent bUtton </button>
            </div>
           
-      </div></div> )
+      </div> 
+        </Link>
+          
+       </div> )
       }
     </div>
     </div>
