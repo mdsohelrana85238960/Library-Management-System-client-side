@@ -37,9 +37,8 @@ const Navbar = () => {
     const navLinks = <>
         <li><NavLink className=' text-lg' to='/'> Home </NavLink></li>
         <li><NavLink  className=' text-lg' to='/addBook'> Add Book </NavLink></li>
-        <li><NavLink  className=' text-lg' to='/ook'>  Borrowed
-Books </NavLink></li>
-        <li><NavLink className=' text-lg' to='/register'> register </NavLink></li>
+        <li><NavLink  className=' text-lg' to='/addBook'> All Book </NavLink></li>
+        <li><NavLink  className=' text-lg' to='/ook'>  Borrowed Books </NavLink></li>
         <li><NavLink className=' text-lg' to='/login'> Login </NavLink></li>
     </>
 
