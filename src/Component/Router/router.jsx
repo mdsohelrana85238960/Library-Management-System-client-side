@@ -9,6 +9,7 @@ import PrivateRoute from "./PrivateRoute";
 import BookCategory from "../Pages/bookCategory";
 import Details from "../Pages/Details";
 import BorrowBooks from "../Pages/BorrowBooks";
+import AllBook from "../Pages/AllBook";
 
 
 
@@ -36,6 +37,11 @@ const router = createBrowserRouter([
         {
             path:"/addBook",
             element: <PrivateRoute><AddBook></AddBook></PrivateRoute>
+        },
+        {
+            path:"/allBook",
+            element: <PrivateRoute><AllBook></AllBook></PrivateRoute>,
+            loader:() => fetch(`http://localhost:5000/books`)
         },
         {
           path: "/details/:id",

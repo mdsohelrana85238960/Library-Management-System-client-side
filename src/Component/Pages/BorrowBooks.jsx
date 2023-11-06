@@ -1,11 +1,17 @@
-import {  useState } from "react";
+import {  useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import swal from "sweetalert";
+import { AuthContext } from "../Provider/AuthProvider";
 
 
 const BorrowBooks = () => {
     const books = useLoaderData()
-    const [borrowBooks,setBooks] = useState(books);
+    const [book,setBooks] = useState(books);
+    const {user} = useContext(AuthContext);
+    console.log(user)
+
+    const borrowBooks = book.filter(item=> item?.email === user.email)
+    console.log(borrowBooks)
     
 
     const handleReturn = (id) =>{

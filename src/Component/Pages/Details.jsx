@@ -21,7 +21,7 @@ const Details = () => {
     const returnDate = e.target.returnDate.value;
     const borrowBooks = { userName, email, returnDate, borrowDate, img, bookName, category };
     console.log(borrowBooks);
-
+    
     fetch('http://localhost:5000/borrowBooks', {
       method: 'POST',
       headers: {
