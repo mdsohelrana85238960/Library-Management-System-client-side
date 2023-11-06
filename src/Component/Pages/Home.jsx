@@ -18,10 +18,11 @@ const Home = () => {
     <div className="grid grid-cols-1 gap-16 md:grid-cols-2 ">
     {
         categorys.map(category => <div key={category.id}> <Link to={`/books/${category.category_name}`}> 
-        <div  className="card card-compact mx-auto   w-96 bg-base-100 shadow-xl">
+        <div  className="card border-2 border-violet-700 card-compact mx-auto   w-96 bg-base-100 shadow-xl">
         <figure><img className="h-80 " src= {category.img} alt="Shoes" /></figure>
         
-          <div className="flex justify-between  p-4"> <h2 className="card-title text-2xl p-1 text-orange-200">{category.category_name}</h2>
+          <div className=" flex flex-col p-4"> 
+          <h2 className="card-title text-blue-500   text-2xl p-1 ">{category.category_name}</h2>
 
           <button className="btn btn-primary">Relevent bUtton </button>
            </div>

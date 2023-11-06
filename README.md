@@ -14,3 +14,4 @@ Client side commit
 server side commit
 1.created server side and running port
 2.created initial server with mongodb connection
+3.set details button and post data

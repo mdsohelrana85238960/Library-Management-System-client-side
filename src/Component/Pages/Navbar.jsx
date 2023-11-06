@@ -38,7 +38,7 @@ const Navbar = () => {
         <li><NavLink className=' text-lg' to='/'> Home </NavLink></li>
         <li><NavLink  className=' text-lg' to='/addBook'> Add Book </NavLink></li>
         <li><NavLink  className=' text-lg' to='/addBook'> All Book </NavLink></li>
-        <li><NavLink  className=' text-lg' to='/ook'>  Borrowed Books </NavLink></li>
+        <li><NavLink  className=' text-lg' to='/allBorrowBook'>  Borrowed Books </NavLink></li>
         <li><NavLink className=' text-lg' to='/login'> Login </NavLink></li>
     </>
 
@@ -64,7 +64,7 @@ const Navbar = () => {
             {/* <button> Logout</button> */}
         {
           user ? <div className="flex gap-2 items-center justify-center ">  <div> <img className="w-10 h-10 rounded-full mx-auto " src={user.photoURL
-          } alt="" /> <p className="  text-orange-500 font-bold">{user.displayName
+          } alt="" /> <p className="  text-violet-700 font-bold">{user.displayName
           } </p> </div>   <button onClick={handleSingOut} className="btn">Sing Out</button> </div>
           :
           <Link to= '/login'>
