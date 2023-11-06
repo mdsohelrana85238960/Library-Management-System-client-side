@@ -47,7 +47,7 @@ const router = createBrowserRouter([
         {
             path:"/allBook",
             element: <PrivateRoute><AllBook></AllBook></PrivateRoute>,
-            loader:() => fetch(`http://localhost:5000/books`)
+            loader:() => fetch('http://localhost:5000/books')
         },
         {
           path: "/details/:id",

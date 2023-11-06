@@ -6,6 +6,9 @@ Client side commit
 6.set private route
 7.created post add book system 
 8.set update method
+9.set update route private
+10.
+11.
 
 
 

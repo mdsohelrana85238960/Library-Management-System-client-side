@@ -24,7 +24,7 @@ const AllBook = () => {
             filteredBooks.map(book => <div key={book._id}> 
             
 
-            <div className="card  mx-auto h-[444px]  w-64  bg-base-100 shadow-xl">
+            <div className="card border-2 border-violet-300 mx-auto h-[444px]  w-64  bg-base-100 shadow-xl">
   <figure><img className=" h-60 w-44 " src= {book.photo} alt="Shoes" /></figure>
   <div className="card-body">
     <h1 className="font-bold "> {book.bookName} </h1>
@@ -42,7 +42,7 @@ const AllBook = () => {
       readOnly
     /> </p>
 
-<Link to={`/updateProduct/${book._id}`}> <button className="btn text-white bg-orange-500">Update</button> </Link>
+<Link to={`/update/${book._id}`}> <button className="btn text-white bg-orange-500">Update</button> </Link>
     </div>
     
   
