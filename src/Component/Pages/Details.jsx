@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import swal from "sweetalert";
 
@@ -63,7 +63,7 @@ const Details = () => {
 
   return (
     <div className="py-24">
-      <div className="card w-[550px] bg-base-100 shadow-xl">
+      <div className="card w-[550px] border-4 border-violet-300  bg-base-100 shadow-xl">
         <figure>
           <img className="w-[480px] h-96" src={books.photo} alt="Shoes" />
         </figure>
@@ -75,9 +75,9 @@ const Details = () => {
           <p>{books.description} See more...</p>
 
           <div className="card-actions justify-between">
-            <button className="btn">read</button>
+            <Link to={`/read/${books._id}`}> <button  className="btn btn-primary">read</button> </Link>
 
-            <a href="#my_modal_8" className="btn" onClick={openModal}>
+            <a href="#my_modal_8" className="btn btn-primary" onClick={openModal}>
               Borrow
             </a>
 

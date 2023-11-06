@@ -11,6 +11,7 @@ import Details from "../Pages/Details";
 import BorrowBooks from "../Pages/BorrowBooks";
 import AllBook from "../Pages/AllBook";
 import UpdateBooks from "../Pages/UpdateBooks";
+import Read from "../Pages/Read";
 
 
 
@@ -30,6 +31,11 @@ const router = createBrowserRouter([
         {
             path:"/login",
             element:<Login></Login>
+        },
+        {
+            path:"/read/:id",
+            element:<Read></Read>,
+            loader: ({params}) => fetch(`http://localhost:5000/books/${params.id}`)
         },
         {
             path:"/register",

@@ -22,7 +22,7 @@ const BookCategory = () => {
             selected.map(data => <div key={data._id}> 
             
 
-            <div className="card  mx-auto   w-64  bg-base-100 shadow-xl">
+            <div className="card border-2 border-violet-400  mx-auto h-[444px]  w-64  bg-base-100 shadow-xl">
   <figure><img className=" h-60 w-44 " src= {data.photo} alt="Shoes" /></figure>
   <div className="card-body">
     <h1 className="font-bold "> {data.bookName} </h1>
