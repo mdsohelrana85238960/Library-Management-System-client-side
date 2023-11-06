@@ -5,7 +5,7 @@ Client side commit
 4.if user login show sweet alert 
 6.set private route
 7.created post add book system 
-8.
+8.set update method
 
 
 
@@ -17,3 +17,4 @@ server side commit
 3.set details button and post data
 4.set delete Method
 5.Update method and return date set
+6.set filter button if Quantity>0 hide this item

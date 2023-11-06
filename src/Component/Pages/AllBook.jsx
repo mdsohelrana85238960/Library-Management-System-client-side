@@ -42,7 +42,7 @@ const AllBook = () => {
       readOnly
     /> </p>
 
-<Link> <button className="btn text-white bg-orange-500">Update</button> </Link>
+<Link to={`/updateProduct/${book._id}`}> <button className="btn text-white bg-orange-500">Update</button> </Link>
     </div>
     
   
