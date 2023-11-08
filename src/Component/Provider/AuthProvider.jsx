@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 
 import app from "../firebase/firebase.config";
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import axios from "axios";
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app)
@@ -21,6 +22,13 @@ const [loading, setLoading] = useState(true)
             // console.log('user in the state change ', currentUser);
             setUser(currentUser);
             setLoading(false)
+            // if (currentUser) {
+            //     const loggedUser = {email: currentUser.email};
+            //     axios.post('https://library-management-system-server-side.vercel.app/jwt', loggedUser,{withCredentials: true})
+            //     .then(res => {
+            //         console.log('token resp', res.data)
+            //     })
+            // }
         })
         return () =>{
             unSubscribe()

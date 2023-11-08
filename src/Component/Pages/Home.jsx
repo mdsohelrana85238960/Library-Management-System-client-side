@@ -38,7 +38,7 @@ const Home = () => {
 </div>
 
 
-      <div className="py-20">
+      <div className="pt-20">
       <div className="hero h-64" style={{backgroundImage: 'url(https://i.pinimg.com/736x/ba/af/fa/baaffae3e5b1f74a1d3f5e20c92c120c.jpg)'}}>
   <div className="hero-overlay  bg-opacity-60"></div>
   <div className="hero-content text-center text-neutral-content">

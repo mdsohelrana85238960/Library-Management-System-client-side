@@ -19,8 +19,9 @@ const handleAddProduct = e =>{
     const allBook = {bookName, photo, category,quantity,author,rating,description}
     console.log(allBook);
 
-    fetch('http://localhost:5000/books',{
+    fetch('https://library-management-system-server-side.vercel.app/books', {
         method:'POST',
+        credentials: 'include',
         headers:{
             "Content-Type": "application/json",
         },

@@ -16,12 +16,13 @@ const handleUpdateBook = e =>{
     const category = form.category.value;
     const author = form.author.value;
     const rating = form.rating.value;
+    const quantity = form.quantity.value;
     
 
-    const allBook = {bookName, photo, category,author,rating}
+    const allBook = {bookName, photo,quantity, category,author,rating}
     console.log(allBook);
 
-    fetch(`http://localhost:5000/books/${id}`,{
+    fetch(`https://library-management-system-server-side.vercel.app/updates/${id}`,{
         method:'PUT',
         headers:{
             "Content-Type": "application/json",
@@ -94,6 +95,19 @@ const handleUpdateBook = e =>{
               />
             </div>
          
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Quantity</span>
+              </label>
+              <input
+                type="number"
+                defaultValue={data.quantity}
+                name="quantity" 
+                placeholder="Quantity"
+                className="input input-bordered"
+                
+              />
+            </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Rating</span>

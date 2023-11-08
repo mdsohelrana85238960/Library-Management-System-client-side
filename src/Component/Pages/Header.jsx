@@ -45,7 +45,7 @@ const Header = () => {
 
 
 
-        <div className="grid grid-cols-2 py-12 gap-8 lg:grid-cols-4 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 py-12 gap-8 lg:grid-cols-4 ">
         <div className="card border border-violet-700 w-56 text-center mx-auto bg-base-100 shadow-md">
   <figure className="px-10 pt-10">
     <img src="https://e7.pngegg.com/pngimages/363/79/png-clipart-google-play-e-readers-e-book-mobile-app-ebook-icon-search-engine-optimization-text.png" alt="Shoes" className="rounded-full w-24 h-24" />

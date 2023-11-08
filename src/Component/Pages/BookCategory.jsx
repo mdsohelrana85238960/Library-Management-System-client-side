@@ -8,10 +8,10 @@ const BookCategory = () => {
     const [selected, setSelected] = useState([]);
     const books = useLoaderData();
     const category_name = useParams();
-    // console.log(category_name,books)
-    // {bookName, photo, category,quantity,author,rating,description}
+    
+  
     useEffect(()=>{
-        const getBook = books?.filter(book => book.category?.toLowerCase() == category_name.category.toLowerCase())
+        const getBook = books.filter(book => book.category?.toLowerCase() == category_name.category.toLowerCase())
         setSelected(getBook)
     },[])
     

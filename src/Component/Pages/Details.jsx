@@ -1,10 +1,13 @@
 import { useContext, useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import swal from "sweetalert";
 
+
 const Details = () => {
   const books = useLoaderData();
+  const {id} = useParams();
+  const originalId = id;
   const { user } = useContext(AuthContext);
   const email = user.email;
   const userName = user.displayName;
@@ -12,17 +15,21 @@ const Details = () => {
   const bookName = books.bookName;
   const category = books.category;
   const quantitys = books.quantity;
+
   
+
   const [modalOpen, setModalOpen] = useState(false);
 
-  const handleReturn = (e) => {
+  const handleBorrow = (e) => {
     e.preventDefault();
     const borrowDate = e.target.borrowDate.value;
     const returnDate = e.target.returnDate.value;
-    const borrowBooks = { userName, email, returnDate, borrowDate, img, bookName, category };
+    const borrowBooks = { userName,originalId, email, returnDate, borrowDate, img, bookName, category };
     console.log(borrowBooks);
     
-    fetch('http://localhost:5000/borrowBooks', {
+    
+
+    fetch('https://library-management-system-server-side.vercel.app/borrowBooks', {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
@@ -39,10 +46,11 @@ const Details = () => {
   };
 
   const handleQuantity = () => {
+
     const quantity = quantitys - 1;
     console.log(quantity);
 
-    fetch(`http://localhost:5000/books/${books._id}`, {
+    fetch(`https://library-management-system-server-side.vercel.app/books/${books._id}`, {
       method: 'PUT',
       headers: {
         "Content-Type": "application/json",
@@ -60,7 +68,7 @@ const Details = () => {
   const openModal = () => {
     setModalOpen(true);
   };
-
+  
   return (
     <div className="py-24">
       <div className="card w-[550px] border-4 border-violet-300  bg-base-100 shadow-xl">
@@ -77,12 +85,13 @@ const Details = () => {
           <div className="card-actions justify-between">
             <Link to={`/read/${books._id}`}> <button  className="btn btn-primary">read</button> </Link>
 
-            <a href="#my_modal_8" className="btn btn-primary" onClick={openModal}>
+            <a href="#my_modal_8" className="btn btn-primary" disabled={isButtonDisabled}  onClick={openModal}>
               Borrow
-            </a>
+            </a> 
+            
 
             {modalOpen && (
-              <form onSubmit={handleReturn}>
+              <form onSubmit={handleBorrow}>
                 <div className="modal" id="my_modal_8">
                   <div className="modal-box">
                     <div className="form-control">
@@ -113,7 +122,7 @@ const Details = () => {
                         onClick={handleQuantity}
                         type="submit"
                         className="btn"
-                        disabled={isButtonDisabled} 
+                        
                       >
                         submit
                       </button>

@@ -7,6 +7,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import swal from "sweetalert";
 import app from "../firebase/firebase.config";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import axios from "axios";
 
 
 
@@ -26,8 +27,22 @@ const handleGoogleSingIn = () =>{
 signInWithPopup(auth, provider)
 .then(result =>{
     console.log(result.user);
-    navigate(from,{replace:true})
-    swal("Good job!", "Login Successfully! With Google ", "success");
+    const user = {
+      email: result.user.email,
+      // Other user information if needed
+    };
+    
+
+    axios.post('https://library-management-system-server-side.vercel.app/jwt',user, {withCredentials:true})
+    .then(res =>{
+      console.log(res.data)
+      if (res.data.success) {
+        navigate(from,{replace:true})
+        swal("Good job!", "Login Successfully!", "success");
+      }
+    })
+    // navigate(from,{replace:true})
+    // swal("Good job!", "Login Successfully! With Google ", "success");
   })
   .catch(error => {
     console.error(error);
@@ -45,11 +60,18 @@ signInWithPopup(auth, provider)
     console.log(email, password);
 
     signIn(email,password)
-    .then(resutl => {
-        console.log(resutl.user)
-        navigate(from,{replace:true})
-        swal("Good job!", "Login Successfully!", "success");
-
+    .then(result => {
+        console.log(result.user)
+        const user = {email}
+       
+        axios.post('https://library-management-system-server-side.vercel.app/jwt',user, {withCredentials:true})
+        .then(res =>{
+          console.log(res.data)
+          if (res.data.success) {
+            navigate(from,{replace:true})
+            swal("Good job!", "Login Successfully!", "success");
+          }
+        })
     })
     .catch(error =>{
         console.log(error.message)
@@ -96,7 +118,7 @@ signInWithPopup(auth, provider)
             </div>
             <p className="text-center pb-4" >Do not have an account <Link className="text-blue-600 font-bold" to='/register'>Register</Link></p> 
             <h1 className="text-center">or</h1>
-            <button onClick={handleGoogleSingIn}  className="flex py- justify-center items-center"> <span className="text-2xl mx-2">Login With  </span> <FcGoogle className="text-4xl "></FcGoogle> </button>
+            <button onClick={handleGoogleSingIn}  className=" bg-gray-300 p-1 rounded-lg flex py- justify-center items-center"> <span className="text-xl">Login With  </span> <FcGoogle className="text-3xl "></FcGoogle> </button>
 
           </form>
         </div>

@@ -1,15 +1,37 @@
 import { Rating } from "@smastrom/react-rating";
-import { useState } from "react";
+import axios from "axios";
+import { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 
 const AllBook = () => {
-    const allBook = useLoaderData();
-    const [filteredBooks, setFilteredBooks] = useState(allBook);
+  const {user} = useContext(AuthContext);
+    // const allBook = useLoaderData();
+    const [allBook, setAllBook] = useState([]);
+    const [filteredBooks, setFilteredBooks] = useState([]);
     
+
+    
+  
+
+    useEffect(()=>{
+      if (!user) {
+        return 
+      }
+      const url = (`https://library-management-system-server-side.vercel.app/allBook?email=${user?.email}`)
+      axios.get(url, {withCredentials:true})
+      .then(res => {
+        setFilteredBooks(res.data)
+        setAllBook(res.data)
+      })
+    },[user])
+
     const handleFilter = () => {
         const filtered = allBook.filter(data => data.quantity > 0);
+
         setFilteredBooks(filtered);
+        console.log('first' , filtered)
     }
 
 
@@ -25,9 +47,9 @@ const AllBook = () => {
             
 
             <div className="card border-2 border-violet-300 mx-auto h-[444px]  w-64  bg-base-100 shadow-xl">
-  <figure><img className=" h-60 w-44 " src= {book.photo} alt="Shoes" /></figure>
+  <figure><img className=" h-60 w-44 pt-2 " src= {book.photo} alt="Shoes" /></figure>
   <div className="card-body">
-    <h1 className="font-bold "> {book.bookName} </h1>
+    <h1 className="font-bold "> {book.bookName} <span className=" px-2 border-2 rounded-full">{book.quantity}</span> </h1>
     <div className="flex justify-between ">
     <p className=" italic"> {book.author} </p>
     <h1 className="text-1xl   "> {book.category} </h1> 
