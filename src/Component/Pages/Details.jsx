@@ -29,7 +29,7 @@ const Details = () => {
     
     
 
-    fetch('https://library-management-system-server-side.vercel.app/borrowBooks', {
+    fetch('https://cd-library-management-system.web.app/borrowBooks', {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
@@ -50,7 +50,7 @@ const Details = () => {
     const quantity = quantitys - 1;
     console.log(quantity);
 
-    fetch(`https://library-management-system-server-side.vercel.app/books/${books._id}`, {
+    fetch(`https://cd-library-management-system.web.app/books/${books._id}`, {
       method: 'PUT',
       headers: {
         "Content-Type": "application/json",

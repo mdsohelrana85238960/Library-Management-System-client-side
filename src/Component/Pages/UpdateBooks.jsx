@@ -22,7 +22,7 @@ const handleUpdateBook = e =>{
     const allBook = {bookName, photo,quantity, category,author,rating}
     console.log(allBook);
 
-    fetch(`https://library-management-system-server-side.vercel.app/updates/${id}`,{
+    fetch(`https://cd-library-management-system.web.app/updates/${id}`,{
         method:'PUT',
         headers:{
             "Content-Type": "application/json",

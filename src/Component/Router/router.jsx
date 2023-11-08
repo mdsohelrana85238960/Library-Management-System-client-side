@@ -35,7 +35,7 @@ const router = createBrowserRouter([
         {
             path:"/read/:id",
             element:<Read></Read>,
-            loader: ({params}) => fetch(`https://library-management-system-server-side.vercel.app/books/${params.id}`)
+            loader: ({params}) => fetch(`https://cd-library-management-system.web.app/books/${params.id}`)
         },
         {
             path:"/register",
@@ -48,29 +48,29 @@ const router = createBrowserRouter([
         {
             path:"/update/:id",
             element: <PrivateRoute><UpdateBooks></UpdateBooks></PrivateRoute>,
-            loader: ({params}) => fetch(`https://library-management-system-server-side.vercel.app/books/${params.id}`)
+            loader: ({params}) => fetch(`https://cd-library-management-system.web.app/books/${params.id}`)
         },
         {
             path:"/allBook",
             element: <PrivateRoute><AllBook></AllBook></PrivateRoute>,
-            // loader:() => fetch('https://library-management-system-server-side.vercel.app/books',{credentials:'include'})
+            // loader:() => fetch('https://cd-library-management-system.web.app/books',{credentials:'include'})
         },
         {
           path: "/details/:id",
           element:<PrivateRoute> <Details></Details> </PrivateRoute>,
-          loader: ({params}) => fetch(`https://library-management-system-server-side.vercel.app/books/${params.id}`)
+          loader: ({params}) => fetch(`https://cd-library-management-system.web.app/books/${params.id}`)
         
   
       },
         {
             path:"/books/:category",
             element: <PrivateRoute> <BookCategory></BookCategory> </PrivateRoute>,
-            loader:() => fetch(`https://library-management-system-server-side.vercel.app/books`)
+            loader:() => fetch(`https://cd-library-management-system.web.app/books`)
         },
         {
             path:"/allBorrowBook",
             element: <PrivateRoute> <BorrowBooks></BorrowBooks> </PrivateRoute>,
-            loader:() => fetch(`https://library-management-system-server-side.vercel.app/borrowBooks`)
+            loader:() => fetch(`https://cd-library-management-system.web.app/borrowBooks`)
         },
       ]
     },

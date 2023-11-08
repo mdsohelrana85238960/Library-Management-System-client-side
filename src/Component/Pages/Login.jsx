@@ -33,7 +33,7 @@ signInWithPopup(auth, provider)
     };
     
 
-    axios.post('https://library-management-system-server-side.vercel.app/jwt',user, {withCredentials:true})
+    axios.post('https://cd-library-management-system.web.app/jwt',user, {withCredentials:true})
     .then(res =>{
       console.log(res.data)
       if (res.data.success) {
@@ -64,7 +64,7 @@ signInWithPopup(auth, provider)
         console.log(result.user)
         const user = {email}
        
-        axios.post('https://library-management-system-server-side.vercel.app/jwt',user, {withCredentials:true})
+        axios.post('https://cd-library-management-system.web.app/jwt',user, {withCredentials:true})
         .then(res =>{
           console.log(res.data)
           if (res.data.success) {

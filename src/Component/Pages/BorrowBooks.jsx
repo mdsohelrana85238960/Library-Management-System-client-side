@@ -18,7 +18,7 @@ const BorrowBooks = () => {
 
     const handleReturn = (id) =>{
 console.log(id)
-        fetch(`https://library-management-system-server-side.vercel.app/borrowBooks/${id}`, {
+        fetch(`https://cd-library-management-system.web.app/borrowBooks/${id}`, {
       method: "DELETE",
       
     })
@@ -31,7 +31,7 @@ console.log(id)
             setBooks(remainingProducts)
 
           
-            // fetch(`https://library-management-system-server-side.vercel.app/books/${original}`, {
+            // fetch(`https://cd-library-management-system.web.app/books/${original}`, {
             //   method: 'PATCH',
             //   headers: {
             //     "Content-Type": "application/json",

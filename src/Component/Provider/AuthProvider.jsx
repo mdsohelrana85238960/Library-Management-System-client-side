@@ -24,7 +24,7 @@ const [loading, setLoading] = useState(true)
             setLoading(false)
             // if (currentUser) {
             //     const loggedUser = {email: currentUser.email};
-            //     axios.post('https://library-management-system-server-side.vercel.app/jwt', loggedUser,{withCredentials: true})
+            //     axios.post('https://cd-library-management-system.web.app/jwt', loggedUser,{withCredentials: true})
             //     .then(res => {
             //         console.log('token resp', res.data)
             //     })
