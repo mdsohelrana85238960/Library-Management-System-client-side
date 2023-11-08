@@ -38,3 +38,9 @@ Bullet Points
 4.all books If you go here, first you have to register and login, then to see all the books, if you go to the all box, the user will see the update button.
 
 5.If the user goes to the category of the book, he will get the details button, if he clicks on the details button, he will get the big button, if he enlarges, he will have to give the date of the bro button, the date on which he will back the book. won't show
+
+
+
+
+
+live link: https://cd-library-management-system.web.app/
