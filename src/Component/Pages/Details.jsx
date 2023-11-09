@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import swal from "sweetalert";
@@ -15,11 +15,21 @@ const Details = () => {
   const bookName = books.bookName;
   const category = books.category;
   const quantitys = books.quantity;
+ 
+  const [iteData,setItemData] = useState([])
 
-  
+  useEffect(() => {
+    fetch('https://library-management-system-server-side-8iwym7fcu.vercel.app/books')
+    .then(res=>res.json())
+    .then(data => setItemData(data))
+  },[])
+  console.log(iteData)
+ 
+
+
+
 
   const [modalOpen, setModalOpen] = useState(false);
-
   const handleBorrow = (e) => {
     e.preventDefault();
     const borrowDate = e.target.borrowDate.value;
@@ -29,7 +39,7 @@ const Details = () => {
     
     
 
-    fetch('https://cd-library-management-system.web.app/borrowBooks', {
+    fetch('https://library-management-system-server-side-8iwym7fcu.vercel.app/borrowBooks', {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
@@ -47,10 +57,13 @@ const Details = () => {
 
   const handleQuantity = () => {
 
-    const quantity = quantitys - 1;
+    
+      const quantity = quantitys - 1;
     console.log(quantity);
+    
+    
 
-    fetch(`https://cd-library-management-system.web.app/books/${books._id}`, {
+    fetch(`https://library-management-system-server-side-8iwym7fcu.vercel.app/books/${books._id}`, {
       method: 'PUT',
       headers: {
         "Content-Type": "application/json",
@@ -60,13 +73,17 @@ const Details = () => {
       .then(res => res.json())
       .then(data => {
         console.log(data);
+  
       });
+      
   };
 
   const isButtonDisabled = quantitys === 0; 
 
   const openModal = () => {
     setModalOpen(true);
+    
+    // const books = iteData.find(book => book._id === original)
   };
   
   return (

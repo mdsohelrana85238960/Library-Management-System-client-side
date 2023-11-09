@@ -33,7 +33,7 @@ signInWithPopup(auth, provider)
     };
     
 
-    axios.post('https://cd-library-management-system.web.app/jwt',user, {withCredentials:true})
+    axios.post('https://library-management-system-server-side-8iwym7fcu.vercel.app/jwt',user, {withCredentials:true})
     .then(res =>{
       console.log(res.data)
       if (res.data.success) {
@@ -64,7 +64,7 @@ signInWithPopup(auth, provider)
         console.log(result.user)
         const user = {email}
        
-        axios.post('https://cd-library-management-system.web.app/jwt',user, {withCredentials:true})
+        axios.post('https://library-management-system-server-side-8iwym7fcu.vercel.app/jwt',user, {withCredentials:true})
         .then(res =>{
           console.log(res.data)
           if (res.data.success) {
@@ -118,7 +118,7 @@ signInWithPopup(auth, provider)
             </div>
             <p className="text-center pb-4" >Do not have an account <Link className="text-blue-600 font-bold" to='/register'>Register</Link></p> 
             <h1 className="text-center">or</h1>
-            <button onClick={handleGoogleSingIn}  className=" bg-gray-300 p-1 rounded-lg flex py- justify-center items-center"> <span className="text-xl">Login With  </span> <FcGoogle className="text-3xl "></FcGoogle> </button>
+            <button onClick={handleGoogleSingIn}  className=" bg-gray-300 p-1 rounded-lg flex py- justify-center items-center"> <span className="text-xl text-black">Login With  </span> <FcGoogle className="text-3xl "></FcGoogle> </button>
 
           </form>
         </div>

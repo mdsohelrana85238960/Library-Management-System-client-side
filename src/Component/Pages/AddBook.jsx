@@ -19,7 +19,7 @@ const handleAddProduct = e =>{
     const allBook = {bookName, photo, category,quantity,author,rating,description}
     console.log(allBook);
 
-    fetch('https://cd-library-management-system.web.app/books', {
+    fetch('https://library-management-system-server-side-8iwym7fcu.vercel.app/books', {
         method:'POST',
         credentials: 'include',
         headers:{

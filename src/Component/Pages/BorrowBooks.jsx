@@ -16,9 +16,9 @@ const BorrowBooks = () => {
     console.log(borrowBooks)
     
 
-    const handleReturn = (id) =>{
+    const handleReturn = (id,original) =>{
 console.log(id)
-        fetch(`https://cd-library-management-system.web.app/borrowBooks/${id}`, {
+        fetch(`https://library-management-system-server-side-8iwym7fcu.vercel.app/borrowBooks/${id}`, {
       method: "DELETE",
       
     })
@@ -30,21 +30,32 @@ console.log(id)
             const remainingProducts = borrowBooks.filter(borrowBook => borrowBook._id !==id);
             setBooks(remainingProducts)
 
+            fetch('https://library-management-system-server-side-8iwym7fcu.vercel.app/books')
+            .then(res=>res.json())
+            .then(data=> {
+              const books = data.find(book => book._id === original)
+
+              console.log(books)  
+
+              
+            fetch(`https://library-management-system-server-side-8iwym7fcu.vercel.app/books/${original}`, {
+              method: 'PATCH',
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({quantity: books.quantity})
+            })  
+              .then(res => res.json())
+              .then(data => {
+                console.log(data);
+                swal('Book quantity increase successfully' )
+              });
+            })
+            
           
-            // fetch(`https://cd-library-management-system.web.app/books/${original}`, {
-            //   method: 'PATCH',
-            //   headers: {
-            //     "Content-Type": "application/json",
-            //   },
-            //   body: JSON.stringify({borrowBooks})
-            // })
-            //   .then(res => res.json())
-            //   .then(data => {
-            //     console.log(data);
-            //     alert('sesss')
-            //   });
           }
       });
+      
     }
 
     

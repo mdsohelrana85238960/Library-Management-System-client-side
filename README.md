@@ -44,4 +44,4 @@ Bullet Points
 
 assignment_category_0008
 
-live link: https://cd-library-management-system.web.app/
+live link: https://library-management-system-server-side-8iwym7fcu.vercel.app/
