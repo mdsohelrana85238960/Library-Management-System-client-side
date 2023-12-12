@@ -37,7 +37,8 @@ const Header = () => {
 
     <div className="bg-stone-800">
         
-      <div className="text-center pt-12 text-white ">
+      <div data-aos="fade-left"
+     data-aos-duration="3000" className="text-center pt-12 text-white ">
         <h1 className="text-3xl">Welcome To The Library</h1>
         <p className="py-3">Welcome To Our Most Popular library</p>
         <img  className="w-12 mx-auto rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAbhJV9dXnWUVkstk9GQPQIVf9YsujHy3LKA&usqp=CAU" alt="" />
@@ -45,7 +46,8 @@ const Header = () => {
 
 
 
-        <div className="grid grid-cols-1 md:grid-cols-2 py-12 gap-8 lg:grid-cols-4 ">
+        <div data-aos="fade-left"
+     data-aos-duration="3000" className="grid grid-cols-1 md:grid-cols-2 py-12 gap-8 lg:grid-cols-4 ">
         <div className="card border border-violet-700 w-56 text-center mx-auto bg-base-100 shadow-md">
   <figure className="px-10 pt-10">
     <img src="https://e7.pngegg.com/pngimages/363/79/png-clipart-google-play-e-readers-e-book-mobile-app-ebook-icon-search-engine-optimization-text.png" alt="Shoes" className="rounded-full w-24 h-24" />
@@ -58,7 +60,8 @@ const Header = () => {
     </div>
   </div>
 </div>            
-        <div className="card border border-violet-700  w-56 bg-base-100 text-center mx-auto shadow-md">
+        <div data-aos="fade-left"
+     data-aos-duration="3000" className="card border border-violet-700  w-56 bg-base-100 text-center mx-auto shadow-md">
   <figure className="px-10 pt-10">
     <img src="https://media.istockphoto.com/id/1301656599/vector/headphones-and-books-logo-audiobook-online-learning-vector-education-concept-flat-design.jpg?s=612x612&w=0&k=20&c=WW2CgbzXDb5o0Bn2DRPDpY-HBkZtoIGhzNR_1T-rEZA=" alt="Shoes" className="rounded-full w-24 h-24" />
   </figure>
@@ -70,7 +73,8 @@ const Header = () => {
     </div>
   </div>
 </div>            
-        <div className="card border border-violet-700 w-56 bg-base-100 text-center mx-auto shadow-md">
+        <div data-aos="fade-left"
+     data-aos-duration="3000" className="card border border-violet-700 w-56 bg-base-100 text-center mx-auto shadow-md">
   <figure className="px-10 pt-10">
     <img src="https://cdn3.vectorstock.com/i/1000x1000/59/32/music-magazine-logo-vector-19725932.jpg" alt="Shoes" className="rounded-full w-24 h-24" />
   </figure>
@@ -82,7 +86,8 @@ const Header = () => {
     </div>
   </div>
 </div>            
-        <div className="card border border-violet-700 w-56 bg-base-100 text-center mx-auto shadow-md">
+        <div data-aos="fade-left"
+     data-aos-duration="3000" className="card border border-violet-700 w-56 bg-base-100 text-center mx-auto shadow-md">
   <figure className="px-10 pt-10">
     <img src="https://cdn3.vectorstock.com/i/1000x1000/79/72/book-kids-logo-vector-34037972.jpg" alt="Shoes" className="rounded-full w-24 h-24" />
   </figure>

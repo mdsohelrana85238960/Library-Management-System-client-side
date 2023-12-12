@@ -1,11 +1,14 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Header from "./Header";
+import UniqueFeatures from "./UniqueFeatures";
+import RecentLaunch from "./RecentLaunch";
 
 const Home = () => {
   const categorys = useLoaderData();
     return (
       <div>
       <Header></Header>
+      <RecentLaunch></RecentLaunch>
       <div className="hero min-h-screen" style={{backgroundImage: 'url(https://img.freepik.com/free-photo/book-library-with-open-textbook_1150-5916.jpg)'}}>
   <div className="hero-overlay bg-opacity-60"></div>
   <div className="hero-content text-center text-neutral-content">
@@ -38,14 +41,22 @@ const Home = () => {
 </div>
 
 
+<section>
+  <UniqueFeatures></UniqueFeatures>
+</section>
+
+
       <div className="pt-20">
       <div className="hero h-64" style={{backgroundImage: 'url(https://i.pinimg.com/736x/ba/af/fa/baaffae3e5b1f74a1d3f5e20c92c120c.jpg)'}}>
   <div className="hero-overlay  bg-opacity-60"></div>
   <div className="hero-content text-center text-neutral-content">
     <div className="max-w-lg ">
-      <h1 className="mb-5 text-3xl font-bold">Confronting Anti-Black Racism: Education</h1>
-      <p className="mb-5">We're highlighting content on topics relating to anti-Black racism. See the newest entry, which explores how racial disparities in education are the cumulative effect of generations of racism</p>
-      <button className="btn btn-primary">Explore The Project</button>
+      <h1  data-aos="fade-left"
+     data-aos-duration="3000" className="mb-5 text-3xl font-bold">Confronting Anti-Black Racism: Education</h1>
+      <p  data-aos="fade-right"
+     data-aos-duration="3000" className="mb-5">We're highlighting content on topics relating to anti-Black racism. See the newest entry, which explores how racial disparities in education are the cumulative effect of generations of racism</p>
+      <button  data-aos="fade-left"
+     data-aos-duration="3000" className="btn btn-primary">Explore The Project</button>
     </div>
   </div>
 </div>
